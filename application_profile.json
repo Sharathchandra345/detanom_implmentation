@@ -1,0 +1,22 @@
+[
+  {
+    "query": "SELECT employee_id, salary FROM PersonalInfo WHERE salary > 50000",
+    "signature": [1, [100, 1], [100, 2], [100], [[100, 2]], 1],
+    "constraints": ["profit >= 0.5 * investment"]
+  },
+  {
+    "query": "UPDATE PersonalInfo SET salary = salary * 1.05 WHERE salary > 55000",
+    "signature": [2, [100, 2], [100], [[100, 2]], 1],
+    "constraints": ["profit >= 0.5 * investment", "resultset1_rows <= 100"]
+  },
+  {
+    "query": "SELECT employee_id, work_experience FROM WorkInfo WHERE work_experience > 10",
+    "signature": [1, [200, 1], [200, 2], [200], [[200, 2]], 1],
+    "constraints": ["profit < 0.5 * investment"]
+  },
+  {
+    "query": "UPDATE PersonalInfo SET salary = salary * 1.1 WHERE salary > 60000",
+    "signature": [2, [100, 2], [100], [[100, 2]], 1],
+    "constraints": ["profit >= 0.5 * investment", "resultset1_rows > 100"]
+  }
+]
